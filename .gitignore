@@ -1,0 +1,17 @@
+.DS_Store
+.directory
+vendor
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# project
+logs/*
+config.ini
+web/.htaccess

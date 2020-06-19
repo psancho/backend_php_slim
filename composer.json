@@ -1,0 +1,25 @@
+{
+    "name": "takoma/template-api",
+    "description": "Template for backend API",
+    "license": "MIT",
+    "version": "0.1.0",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://git.takoma.fr/takoma/shared/lizy.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.takoma.fr/takoma/shared/lizySlim.git"
+        }
+    ],
+    "require": {
+        "php": ">=7.2@stable",
+        "takoma/lizyslim": "~6@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Takoma\\Template\\Api\\": "src/"
+        }
+    }
+}
