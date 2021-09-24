@@ -20,14 +20,10 @@ class Root
 
     /** @var self */
     private static $_instance;
-    /** @var array */
+    /** @var array<string, mixed> */
     protected $dbConf;
     /** @var PDO */
     protected $dbCnx;
-    /** @var array */
-    protected $nrtDbConf;
-    /** @var PDO */
-    protected $nrtCnx;
     /** @var string */
     public $version;
 
@@ -76,7 +72,7 @@ class Root
         // initialisation des données de connexion DB
         $this->dbConf = $config->getSection('db');
 
-        $this->version = Lizy::getVersionFromComposer($rootPath . "composer.json");
+        $this->version = Lizy::getVersionFromComposer($rootPath . "composer.json") ?: '';
         // lecture des versions
         Version::set($this->version);
     }

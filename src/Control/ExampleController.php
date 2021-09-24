@@ -13,7 +13,10 @@ use Takoma\Template\Api\Model\Example;
 class ExampleController extends BaseController
 {
 
-    /** GET /examples */
+    /**
+     * GET /examples
+     * @param array<string> $args
+     */
     public function get(Request $request, Response $response, array $args): Response
     {
         if (!$this->isJsonAccepted()) {

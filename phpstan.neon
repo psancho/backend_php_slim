@@ -1,0 +1,13 @@
+parameters:
+    level: 8
+    phpVersion: 70400 # PHP 7.4
+    paths:
+        - src
+    # ignoreErrors:
+    #     -
+    #         message: '#regex#'
+    #         path: src/Xxx.php
+    #     -
+    #         message: '#regex#'
+    #         paths:
+    #             - src/Xxx.php
