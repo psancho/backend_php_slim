@@ -3,6 +3,7 @@ parameters:
     phpVersion: 70400 # PHP 7.4
     paths:
         - src
+        - web
     # ignoreErrors:
     #     -
     #         message: '#regex#'
