@@ -9,8 +9,7 @@ try {
     header('Pragma: no-cache');
     header('Content-Type: text/plain; charset=utf-8');
     echo "hayé";
-} catch (\Exception $e) {
-    Debug::get($e)->log()->show();
-} catch (\Throwable $e) {
-    Debug::get($e)->log()->show();
+} catch (Throwable $e) {
+    print_r($e);
+    Debug::get($e)->log();
 }

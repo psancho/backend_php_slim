@@ -11,6 +11,6 @@ Lizy::set(dirname(__DIR__));
 
 try {
     Root::set();
-} catch (\Exception $e) {
-    Debug::get($e)->log()->show();
+} catch (Throwable $e) {
+    Debug::get($e)->log();
 }

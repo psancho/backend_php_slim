@@ -6,6 +6,7 @@ use Takoma\Lizy\Conf;
 use Takoma\Lizy\DB\MysqlCnx;
 use Takoma\Lizy\Files\Temp;
 use Takoma\Lizy\Lizy;
+use Takoma\Lizy\Pattern\Singleton;
 use Takoma\Lizy\SlimInterface\LizySlim;
 use Takoma\Lizy\Version;
 use Takoma\Lizy\Web\ScriptUrl;
@@ -18,6 +19,8 @@ use Takoma\Lizy\Web\ScriptUrl;
  */
 class Root
 {
+    use Singleton;
+
     const NS = __NAMESPACE__;
 
     /** @var self */
@@ -108,14 +111,4 @@ class Root
 
         return $this->dbCnx;
     }
-
-    /**
-     * Clonage interdit
-     *
-     * @access private
-     */
-    private final function __clone()
-    {
-    }
-
 }
