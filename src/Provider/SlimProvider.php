@@ -14,7 +14,7 @@ use Takoma\Lizy\SlimInterface\Middleware\PhpErrorHandler;
 use Takoma\Lizy\SlimInterface\Middleware\SecurityHandler;
 use Takoma\Template\Api\Control\ExampleController;
 
-class RestApiProvider
+class SlimProvider
 {
 
     /** initialisation et lancement de l'app Slim */
