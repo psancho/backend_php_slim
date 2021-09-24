@@ -2,6 +2,7 @@
 
 namespace Takoma\Template\Api;
 
+use PDO;
 use Takoma\Lizy\Conf;
 use Takoma\Lizy\DB\MysqlCnx;
 use Takoma\Lizy\Files\Temp;
@@ -11,12 +12,6 @@ use Takoma\Lizy\SlimInterface\LizySlim;
 use Takoma\Lizy\Version;
 use Takoma\Lizy\Web\ScriptUrl;
 
-/**
- * Description
- *
- * @category Nissan\Gembakaizen
- * @package  Api
- */
 class Root
 {
     use Singleton;
@@ -27,34 +22,26 @@ class Root
     private static $_instance;
     /** @var array */
     protected $dbConf;
-    /** @var \PDO */
+    /** @var PDO */
     protected $dbCnx;
     /** @var array */
     protected $nrtDbConf;
-    /** @var \PDO */
+    /** @var PDO */
     protected $nrtCnx;
     /** @var string */
     public $version;
 
-    /**
-     * get() retourne l'instance du singleton
-     *
-     * @return self
-     */
-    public static function get() : self
+    /** retourne l'instance du singleton */
+    public static function get() :self
     {
         return self::set();
     }
 
-    /**
-     * set() retourne l'instance du singleton
-     *
-     * @return self
-     */
-    public static function set() : self
+    /** retourne l'instance du singleton */
+    public static function set() :self
     {
         if (!isset(self::$_instance)) {
-            self::$_instance = new self();
+            self::$_instance = new self;
         }
         return self::$_instance;
     }
@@ -94,19 +81,14 @@ class Root
         Version::set($this->version);
     }
 
-    /**
-     * instancie si nécessaire la connexion DB GK et retourne le PDO associé
-     *
-     * @return \PDO
-     */
-    public function getDbCnx() : \PDO
+    public function getDbCnx() :PDO
     {
         if (!isset($this->dbCnx)) {
             $this->dbCnx = MysqlCnx::set(
                 $this->dbConf['dns'],
                 $this->dbConf['login'],
                 $this->dbConf['password'],
-                [\PDO::MYSQL_ATTR_LOCAL_INFILE => true]);
+                [PDO::MYSQL_ATTR_LOCAL_INFILE => true]);
         }
 
         return $this->dbCnx;

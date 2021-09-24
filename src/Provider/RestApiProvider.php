@@ -14,19 +14,11 @@ use Takoma\Lizy\SlimInterface\Middleware\PhpErrorHandler;
 use Takoma\Lizy\SlimInterface\Middleware\SecurityHandler;
 use Takoma\Template\Api\Control\ExampleController;
 
-/**
- * Description
- *
- * @category Takoma\PoleEmploi\CatalogueFormations
- * @package  Api
- */
 class RestApiProvider
 {
 
-    /**
-     * initialisation et lancement de l'app Slim
-     */
-    public static function init()
+    /** initialisation et lancement de l'app Slim */
+    public static function init(): void
     {
         // obligatoire pour les WS
         Lizy::logFatalError();
@@ -60,12 +52,8 @@ class RestApiProvider
         $app->run();
     }
 
-    /**
-     * définition des routes
-     *
-     * @param App $app Application Slim
-     */
-    protected static function registerControllers(App $app)
+    /** définition des routes */
+    protected static function registerControllers(App $app): void
     {
         VersionController::register($app);
         ExampleController::register($app);

@@ -10,25 +10,11 @@ use Takoma\Lizy\Web\Json;
 use Takoma\Lizy\Web\StatusCode;
 use Takoma\Template\Api\Model\Example;
 
-/**
- * Description
- *
- * @category Takoma\Template\Api
- * @package  Api
- */
 class ExampleController extends BaseController
 {
 
-    /**
-     * GET /examples
-     *
-     * @param Request  $request  requête PSR7
-     * @param Response $response réponse PSR7
-     * @param array    $args     arguments (npp, business)
-     *
-     * @return Response
-     */
-    public function get(Request $request, Response $response, array $args)
+    /** GET /examples */
+    public function get(Request $request, Response $response, array $args): Response
     {
         if (!$this->isJsonAccepted()) {
             return $response->withStatus(StatusCode::HTTP_406_NOT_ACCEPTABLE);
@@ -42,12 +28,8 @@ class ExampleController extends BaseController
         ;
     }
 
-    /**
-     * Définit les endpoints du contrôleur
-     *
-     * @param App $app Application Slim
-     */
-    public static function register(App $app)
+    /** Définit les endpoints du contrôleur */
+    public static function register(App $app): void
     {
         $container = $app->getContainer();
         $securityHandler = $container->get('securityHandler');
