@@ -26,7 +26,6 @@ class SlimProvider
         // désactivation du contrôle d'accès sur machine de dev avec l'option restApi.securityDisabled
         $overrideSecurity = (bool) Conf::get()->getOption('restApi', 'securityDisabled');
         $disableCache = Conf::get()->getOption('restApi', 'cacheDisabled', false);
-        $cipherKey = Conf::get()->getOption('oauth', 'cipherKey');
 
         $container = new Container([
             'errorHandler' => function ($c) {
