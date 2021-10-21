@@ -26,6 +26,8 @@ class Root
     protected $dbCnx;
     /** @var string */
     public $version;
+    /** @var string */
+    protected static $classDir = __DIR__;
 
     /** retourne l'instance du singleton */
     public static function get() :self
