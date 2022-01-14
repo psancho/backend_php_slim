@@ -38,7 +38,7 @@ class Root
     /** retourne l'instance du singleton */
     public static function set() :self
     {
-        if (!isset(self::$_instance)) {
+        if (!isset(self::$_instance)) {// @phpstan-ignore-line
             self::$_instance = new self;
         }
         return self::$_instance;
@@ -81,7 +81,7 @@ class Root
 
     public function getDbCnx() :PDO
     {
-        if (!isset($this->dbCnx)) {
+        if (!isset($this->dbCnx)) {// @phpstan-ignore-line
             $this->dbCnx = MysqlCnx::set(
                 $this->dbConf['dns'],
                 $this->dbConf['login'],
