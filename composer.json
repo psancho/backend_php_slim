@@ -14,8 +14,8 @@
         }
     ],
     "require": {
-        "php": "^7.2 || ^8",
-        "takoma/lizyslim": "^8"
+        "php": "^7.4 || ^8",
+        "takoma/lizyslim": "^9"
     },
     "autoload": {
         "psr-4": {
