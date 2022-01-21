@@ -6,11 +6,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://gitlab.com/takoma.fr/takoma/shared/lizy.git"
+            "url": "https://gitlab.com/takoma_fr/takoma/shared/lizy.git"
         },
         {
             "type": "vcs",
-            "url": "https://gitlab.com/takoma.fr/takoma/shared/lizySlim.git"
+            "url": "https://gitlab.com/takoma_fr/takoma/shared/lizySlim.git"
         }
     ],
     "require": {
