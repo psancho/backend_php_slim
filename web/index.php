@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 use Takoma\Lizy\Provider\LogProvider;
 use Takoma\Template\Api\Provider\SlimProvider;
