@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-use Takoma\Lizy\Debug;
+use Takoma\Lizy\Provider\LogProvider;
 
 require '../src/bootStrap.php';
 
@@ -11,5 +11,5 @@ try {
     echo "hayé";
 } catch (Throwable $e) {
     print_r($e);
-    Debug::get($e)->log();
+    LogProvider::error($e);
 }
